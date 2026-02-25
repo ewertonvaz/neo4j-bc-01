@@ -1,3 +1,10 @@
+// Run admin command in system DB
+:use system
+CREATE DATABASE movies IF NOT EXISTS;
+
+// Switch to target DB for data writes
+:use movies
+
 MERGE (Action:Genre { description:'Action' })
 MERGE (SciFi:Genre { description:'Science Fiction' })
 
